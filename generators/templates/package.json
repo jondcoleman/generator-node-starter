@@ -8,5 +8,8 @@
     "start": "node index.js"
   },
   "author": "Jonathan Coleman",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "*"
+  }
 }

@@ -7,13 +7,14 @@ module.exports = class extends Generator {
     })
 
     const packageJson = {
-      name: this.appname
+      name: this.appname.replace(/\s+/g, '-').toLowerCase()
     }
 
     this.fs.extendJSON(this.destinationPath('package.json'), packageJson)
   }
 
   end() {
+    this.yarnInstall()
     this.spawnCommandSync('git', ['init'])
   }
 }
